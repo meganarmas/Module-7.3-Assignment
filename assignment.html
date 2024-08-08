@@ -1,19 +1,105 @@
 <!DOCTYPE html> 
 <html>
+<head>
+<title>Module 7.3 Assignment</title>
+</head>
 <body>
 
+    <h1>Exploring New HTML5 Input Types</h1>
+
+    <h4>Email Form</h4>
+    <form action ="/submit-email" method="post">
+        <fieldset>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email">
+            
+            <button type="submit">Submit</button>
+        </form>
+        </fieldset>
+
+        <h4>Number Form</h4>
+        <form action ="/submit-number" method="post">
+            <fieldset>
+        <label for="number">Number:</label>
+            <input type="number" id="number" name="number" placeholder="Choose number:" min="1" max="100" required>
+            <button type="submit">Submit</button>
+        </form>
+        </fieldset>
 
 
+        <h4>Date Form</h4>
+        <form action ="/submit-date" method="post">
+            <fieldset>
+            <label for="date-input">Today's Date:</label>
+            <input type="date" id="date" name="date" placeholder="mm/dd/yyyy"required>
+            <button type="submit">Submit</button>
+            </form>
+        </fieldset>
 
 
+        <h4>Range Input Field</h4>
+        <fieldset>
+        <style>
+            .value-display{font-weight: bold;
+            margin-left: 5px;}
+        </style>
+
+        <script>
+            function updateRangeValue(value) {document.getElementById('rangeValue').innerHTML=value;}
+        </script>
+
+        <form action="/submit" method="post">
+        <label for="range">Range:</label>
+            <input type="range" id="range" name="range" min="1" max="10" oninput="updateRangeValue" required>
+            <span id="rangeValue" class="value-display">5</span>
+            <button type="submit">Submit</button>
+        </form>
+    </fieldset>
+
+        <h4>Color Input</h4>
+        <fieldset>
+            <form action="/submit_color" method="post">
+                <label for="color">Choose color:</label>
+                <input type="color" id="color" name="color" value="#FFFFFF">
+                <button type="submit">Submit</button>
+            </form>
+        </fieldset>
 
 
-
-
-
-
-
-
+        <h4>Selection Experience</h4>
+            <form action="/submit-experience" method="put">
+            <fieldset>
+                <div>
+                <label id="programming-favorites">Favorite Programming Lanugage</label>
+                    <select id="programming-favorites" name="programming-favorites" required aria-required="true">
+                        <option value="Javascript">Javascript</option>
+                        <option value="Python">Python</option>
+                        <option value="C++">C++</option>
+                        </div>
+            
+                <div>
+                <label id="level-expertise">Level of expertise</label>
+                <input type="radio" id="beginner" name="experience" value="beginner" required>
+                <label for="beginnder">Beginner</label>
+                <input type="radio" id="intermediate" name="experience" value="intermediate" required>
+                <label for="intermediate">Intermediate</label>
+                <input type="radio" id="advance" name="experience" value="advance" required>
+                <label for="advance">Advance</label>
+                </div>
+            
+            <div>       
+            <legend id="platforms-label">Preference of Platform</legend>
+            <div>
+            <input type="checkbox" id="web" name="platform" value="web">
+            <label for="web">Web</label>
+            <input type="checkbox" id="mobile" name="platform" value="mobile">
+            <label for="mobile">Mobile</label>
+            <input type="checkbox" id="desktop" name="platform" value="desktop">
+            <label for="desktop">Desktop</label>
+            </div>
+            </form>
+        </fieldset>
 
 </body>
 </html>
